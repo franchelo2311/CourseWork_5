@@ -46,3 +46,21 @@ fibo_helper_v2(N, First, Second, Fibo) :-
     Next is First + Second,
     N1 is N - 1,
     fibo_helper_v2(N1, Second, Next, Fibo).
+% go/0 - Implements and tests all functions.
+go :-
+    % Test gcd
+    write('Testing GCD:'), nl,
+    gcd(48, 18, GCD1),
+    format('gcd(48, 18) = ~w~n', [GCD1]),
+    gcd_v2(48, 18, GCD2),
+    format('gcd_v2(48, 18) = ~w~n', [GCD2]),
+
+    % Test Fibonacci (recursive)
+    write('Testing Fibonacci (recursive):'), nl,
+    fibo(10, Fibo1),
+    format('fibo(10) = ~w~n', [Fibo1]),
+
+    % Test Fibonacci (tail-recursive)
+    write('Testing Fibonacci (tail-recursive):'), nl,
+    fibo_v2(10, Fibo2),
+    format('fibo_v2(10) = ~w~n', [Fibo2]).
